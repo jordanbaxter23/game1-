@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Number Game</title>
+    <style>
+      body {
+        font-size: 2rem;
+        text-align: center;
+      }
+      .red {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Number Game</h1>
+    <p>Click the button below to generate a random number:</p>
+    <button onclick="generateNumber()">Generate Number</button>
+    <p id="result"></p>
+    
+    <script>
+      // Define a function to generate a random number between 1-100 and display it on the page
+      function generateNumber() {
+        const randomNumber = Math.floor(Math.random() * 100) + 1; // Generate a random number between 1-100
+        const resultElement = document.getElementById("result");
+        resultElement.textContent = randomNumber;
+        
+        // Highlight the number in red if it falls within a certain range
+        if (randomNumber >= 1 && randomNumber <= 20) {
+          resultElement.classList.add("red");
+        } else if (randomNumber >= 80 && randomNumber <= 100) {
+          resultElement.classList.add("red");
+        } else {
+          resultElement.classList.remove("red");
+        }
+      }
+    </script>
+  </body>
+</html>
